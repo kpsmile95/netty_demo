@@ -1,4 +1,4 @@
-package cn.wm.demo1_nio.transfer;
+package cn.wm.nio.transfer;
 
 import org.junit.Test;
 
