@@ -33,6 +33,7 @@ public class NettyServer {
             System.out.println("server is ready....");
 
             ChannelFuture sync = bootstrap.bind(9999).sync();
+            sync.channel().closeFuture().sync();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         } finally {
