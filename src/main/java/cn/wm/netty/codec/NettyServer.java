@@ -31,6 +31,7 @@ public class NettyServer {
                             ChannelPipeline pipeline = sc.pipeline();
                             //增加protobuf解码器
                             //指定要解析的类型
+                            //protobuf解码器需要放在NettyServerHandler之前
                             pipeline.addLast("decoder", new ProtobufDecoder(MyDataInfo.Student.getDefaultInstance()));
                             pipeline.addLast(new NettyServerHandler());
                     }

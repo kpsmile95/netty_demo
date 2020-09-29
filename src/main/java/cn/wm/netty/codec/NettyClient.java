@@ -26,6 +26,7 @@ public class NettyClient {
                         protected void initChannel(SocketChannel socketChannel) throws Exception {
                             ChannelPipeline pipeline = socketChannel.pipeline();
                             //增加protobuf编码器
+                            //protobuf编码器需要放在NettyClientHandler之前
                             pipeline.addLast("encoder", new ProtobufEncoder());
                             pipeline.addLast(new NettyClientHandler());
                         }
