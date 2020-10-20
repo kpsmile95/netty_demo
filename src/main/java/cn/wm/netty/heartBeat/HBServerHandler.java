@@ -28,7 +28,7 @@ public class HBServerHandler extends ChannelInboundHandlerAdapter {
             }
             System.out.println(ctx.channel().remoteAddress()+"--超时时间--"+eventType);
             System.out.println("服务器做出相应处理..");
-
+            ctx.writeAndFlush(eventType);
             ctx.channel().close();
         }
     }
